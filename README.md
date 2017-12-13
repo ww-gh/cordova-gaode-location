@@ -1,4 +1,4 @@
-# cordova-gaode-location V1.0.2
+# cordova-gaode-location V1.0.3
 自定义使用高德SDK进行定位的插件，只支持android端，iOS 用浏览器定位就可以了，而且支持IOS的SDK较大，所以就没添加了；
 
 ## 1、高度地图版本介绍：
@@ -11,7 +11,7 @@ cordova plugin add https://github.com/ww-gh/cordova-gaode-location.git --variabl
 ```
 - 或通过 Cordova Plugins 安装，要求 Cordova CLI 5.0+：
 ```shell
-cordova plugin cordova-gaode-location --variable API_KEY="你在高度官网申请的API_KEY"
+cordova plugin add cordova-gaode-location --variable API_KEY="你在高度官网申请的API_KEY"
 ```
 > 注意：使用前先到高度官网去申请自己的API Key；
 
