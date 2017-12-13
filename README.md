@@ -1,14 +1,17 @@
 # cordova-gaode-location
-自定义使用高德SDK进行定位的插件，只支持android端，iOS 用浏览器定位就可以了
+自定义使用高德SDK进行定位的插件，只支持android端，iOS 用浏览器定位就可以了；
+
 1、高度地图版本是：
    AMap_Location_V3.4.1_20170629.jar
+   
 2、使用说明：
 cordova.plugins.GaoDeLocation.getCurrentPosition((resp: GaoDeposition) => {
                     console.log(resp);
                 }, (err: ErrorInfo) => {
                     console.log(err);
                 });
-//GaoDeposition描述     
+                
+//GaoDeposition描述
 class GaoDeposition {
     locationType: number;
     latitude: number;
