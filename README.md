@@ -3,8 +3,12 @@
 
 1、高度地图版本是：
    AMap_Location_V3.4.1_20170629.jar，请已到高度地图API官网下载；
-
-2、使用说明：typescript语法
+   
+2、添加方式：
+   cordova plugin add https://github.com/ww-gh/cordova-gaode-location.git --variable API_KEY="你在高度官网申请的API_KEY"
+   注意：使用前先到高度官网去申请自己的API Key；
+   
+3、使用说明：typescript语法
 ```typescript
 cordova.plugins.GaoDeLocation.getCurrentPosition((resp: GaoDeposition) => {
                     console.log(resp);
