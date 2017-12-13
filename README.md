@@ -1,16 +1,17 @@
 # cordova-gaode-location
-自定义使用高德SDK进行定位的插件，只支持android端，iOS 用浏览器定位就可以了；
+自定义使用高德SDK进行定位的插件，只支持android端，iOS 用浏览器定位就可以了，而且支持IOS的SDK较大，所以就没添加了；
 
 1、高度地图版本是：
-   AMap_Location_V3.4.1_20170629.jar
-   
-2、使用说明：
+   AMap_Location_V3.4.1_20170629.jar，请已到高度地图API官网下载；
+
+2、使用说明：typescript语法
+```typescript
 cordova.plugins.GaoDeLocation.getCurrentPosition((resp: GaoDeposition) => {
                     console.log(resp);
                 }, (err: ErrorInfo) => {
                     console.log(err);
                 });
-                
+
 //GaoDeposition描述
 class GaoDeposition {
     locationType: number;
@@ -33,31 +34,32 @@ class ErrorInfo {
     errorInfo: string;
 }
 
-    /**
-     * 自定义的截取高德地图返回的错误描述
-     * 返回的提醒信息格式是：
-     * 问题说明
-     * +空格
-     * +请到http://lbs.amap.com/api/android-location-sdk/guide/utilities/errorcode/查看错误码说明,
-     * +错误详细信息:问题排查策略
-     * +#错误码
-     * @param err
-     * @return {string}
-     */
-    static getErrorInfo(err: ErrorInfo): string {
-        let errInfo = '';
-        if (err) {
-            if (err.errorInfo.indexOf(' ') > 0) {//问题说明
-                errInfo = err.errorInfo.substring(0, err.errorInfo.indexOf(' '));
-            }
-            if (err.errorInfo.indexOf('错误详细信息') > 0) {//问题排查策略
-                errInfo = errInfo + err.errorInfo.substring(err.errorInfo.indexOf('错误详细信息'), err.errorInfo.length)
-                        .replace("错误详细信息", "");
-            } else {
-                errInfo = err.errorInfo;
-            }
-        } else {
-            errInfo = "定位出现未知错误，请稍后重试！"
-        }
-        return errInfo;
-    }
+ /**
+  * 自定义的截取高德地图返回的错误描述
+  * 返回的提醒信息格式是：
+  * 问题说明
+  * +空格
+  * +请到http://lbs.amap.com/api/android-location-sdk/guide/utilities/errorcode/查看错误码说明,
+  * +错误详细信息:问题排查策略
+  * +#错误码
+  * @param err
+  * @return {string}
+  */
+ static getErrorInfo(err: ErrorInfo): string {
+     let errInfo = '';
+     if (err) {
+         if (err.errorInfo.indexOf(' ') > 0) {//问题说明
+             errInfo = err.errorInfo.substring(0, err.errorInfo.indexOf(' '));
+         }
+         if (err.errorInfo.indexOf('错误详细信息') > 0) {//问题排查策略
+             errInfo = errInfo + err.errorInfo.substring(err.errorInfo.indexOf('错误详细信息'), err.errorInfo.length)
+                     .replace("错误详细信息", "");
+         } else {
+             errInfo = err.errorInfo;
+         }
+     } else {
+         errInfo = "定位出现未知错误，请稍后重试！"
+     }
+     return errInfo;
+ }
+```
