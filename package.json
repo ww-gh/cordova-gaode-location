@@ -1,0 +1,17 @@
+{
+  "name": "cordova-gaode-location",
+  "version": "0.0.1",
+  "description": "自定义使用高德SDK进行定位的插件，只支持android端，iOS 用浏览器定位就可以了",
+  "cordova": {
+    "id": "cordova-gaode-location",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "wangwen",
+  "license": "ISC"
+}
