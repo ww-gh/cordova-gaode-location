@@ -13,8 +13,7 @@ cordova plugin add https://github.com/ww-gh/cordova-gaode-location.git --variabl
 ```shell
 cordova plugin cordova-gaode-location --variable API_KEY="你在高度官网申请的API_KEY"
 ```
-注意：使用前先到高度官网去申请自己的API Key；
-
+> 注意：使用前先到高度官网去申请自己的API Key；
 
 ## 3、使用说明：
 - typescript语法
